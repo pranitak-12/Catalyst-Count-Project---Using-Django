@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Filter</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <div class="main-content app-content">
+        <div class="container-fluid">
+
+            <!-- Start::page-header -->
+            <div class="d-flex align-items-center justify-content-between page-header-breadcrumb flex-wrap gap-2">
+                <div>
+                    <nav>
+                        <ol class="breadcrumb mb-1">
+                            <li class="breadcrumb-item"><a href="javascript:void(0);">Apps</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Data Filteration</li>
+                        </ol>
+                    </nav>
+                    <h1 class="page-title fw-medium fs-18 mb-0">Data Filteration</h1>
+                </div>
+            </div>
+            <!-- End::page-header -->
+
+            <form method="POST" id="myForm" action="" class="row g-3 mt-0">
+                {% csrf_token %}
+                <div class="col-md-6">
+                    <label class="form-label">Company Name</label>
+                    <input type="text" class="form-control" placeholder="Company Name" id="company_name" name="company_name"
+                        aria-label="Company Name">
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Industry</label>
+                    <input type="text" class="form-control" placeholder="Industry" id="industry" name="industry"
+                        aria-label="Industry">
+                </div>
+                <div class="col-md-6">
+                    <label for="yr_founded" class="form-label">Year Founded</label>
+                    <input type="text" class="form-control" placeholder="Year Founded" id="yr_founded" name="yr_founded">
+                </div>
+                <div class="col-md-6">
+                    <label for="inputPassword4" class="form-label">Country</label>
+                    <input type="text" class="form-control" placeholder="Country" id="country" name="country">
+                </div>
+                <div class="col-12">
+                    <button type="button" class="btn btn-primary" id="searchBtn">Search</button>
+                    <button type="reset" class="btn btn-danger">Clear</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+    {% include 'footer.html' %}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="{% static 'assets/js/query_filter.js' %}"></script>
+
+
+</body>
+</html>

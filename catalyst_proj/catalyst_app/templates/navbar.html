@@ -1,0 +1,274 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-nav-layout="vertical" data-theme-mode="light" data-header-styles="light" data-menu-styles="dark" data-toggled="close">
+
+<head>
+
+    <!-- Meta Data -->
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title> Catalyst Count </title>
+    <meta name="Description" content="Bootstrap Responsive Admin Web Dashboard HTML5 Template">
+    <meta name="Author" content="Spruko Technologies Private Limited">
+	<meta name="keywords" content="html, html and css templates, html css and javascript, html css, html javascript, html css bootstrap, admin, bootstrap admin template, bootstrap 5 admin template, dashboard template bootstrap, admin panel template, dashboard panel, bootstrap admin, dashboard, template admin, html admin template">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="{% static 'assets/images/brand-logos/favicon.ico' %}" type="image/x-icon">
+    
+    <!-- Choices JS -->
+    <script src="{% static 'assets/libs/choices.js/public/assets/scripts/choices.min.js' %}"></script>
+
+    <!-- Main Theme Js -->
+    <script src="{% static 'assets/js/main.js' %}"></script>
+    
+    <!-- Bootstrap Css -->
+    <link id="style" href="{% static 'assets/libs/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" >
+
+    <!-- Style Css -->
+    <link href="{% static 'assets/css/styles.css' %}" rel="stylesheet" >
+
+    <!-- Icons Css -->
+    <link href="{% static 'assets/css/icons.css' %}" rel="stylesheet" >
+
+    <!-- Node Waves Css -->
+    <link href="{% static 'assets/libs/node-waves/waves.min.css' %}" rel="stylesheet" > 
+
+    <!-- Simplebar Css -->
+    <link href="{% static 'assets/libs/simplebar/simplebar.min.css' %}" rel="stylesheet" >
+    
+    <!-- Color Picker Css -->
+    <link rel="stylesheet" href="{% static 'assets/libs/flatpickr/flatpickr.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/libs/@simonwep/pickr/themes/nano.min.css' %}">
+
+    <!-- Choices Css -->
+    <link rel="stylesheet" href="{% static 'assets/libs/choices.js/public/assets/styles/choices.min.css' %}">
+
+    <!-- FlatPickr CSS -->
+    <link rel="stylesheet" href="{% static 'assets/libs/flatpickr/flatpickr.min.css' %}">
+
+    <!-- Auto Complete CSS -->
+    <link rel="stylesheet" href="{% static 'assets/libs/@tarekraafat/autocomplete.js/css/autoComplete.css' %}">
+
+
+    <!-- Prism CSS -->
+    <link rel="stylesheet" href="{% static 'assets/libs/prismjs/themes/prism-coy.min.css' %}">
+
+    
+
+</head>
+
+<body>
+
+
+
+    <!-- Loader -->
+<div id="loader" >
+    <img src="{% static 'assets/images/media/loader.svg' %}" alt="">
+</div>
+<!-- Loader -->
+
+    <div class="page">
+
+             <!-- app-header -->
+ <header class="app-header sticky" id="header">
+
+    <!-- Start::main-header-container -->
+    <div class="main-header-container container-fluid">
+
+        <!-- Start::header-content-left -->
+        <div class="header-content-left">
+
+            <!-- Start::header-element -->
+            <div class="header-element">
+                <div class="horizontal-logo">
+                    <a href="" class="header-logo">
+                        <img src="{% static 'assets/images/brand-logos/desktop-logo.png' %}" alt="logo" class="desktop-logo">
+                        <img src="{% static 'assets/images/brand-logos/toggle-dark.png' %}" alt="logo" class="toggle-dark">
+                        <img src="{% static 'assets/images/brand-logos/desktop-dark.png' %}" alt="logo" class="desktop-dark">
+                        <img src="{% static 'assets/images/brand-logos/toggle-logo.png' %}" alt="logo" class="toggle-logo">
+                        <img src="{% static 'assets/images/brand-logos/toggle-white.png' %}" alt="logo" class="toggle-white">
+                        <img src="{% static 'assets/images/brand-logos/desktop-white.png' %}" alt="logo" class="desktop-white">
+                    </a>
+                </div>
+            </div>
+            <!-- End::header-element -->
+
+        </div>
+        <!-- End::header-content-left -->
+
+        <!-- Start::header-content-right -->
+        <ul class="header-content-right">
+
+            <!-- Start::header-element -->
+            <li class="header-element d-md-none d-block">
+                <a href="javascript:void(0);" class="header-link" data-bs-toggle="modal" data-bs-target="#header-responsive-search">
+                    <!-- Start::header-link-icon -->
+                    <i class="bi bi-search header-link-icon"></i>
+                    <!-- End::header-link-icon -->
+                </a>  
+            </li>
+            <!-- End::header-element -->
+
+
+            
+
+            <!-- Start::header-element -->
+            <li class="header-element dropdown">
+                <!-- Start::header-link|dropdown-toggle -->
+                <a href="javascript:void(0);" class="header-link dropdown-toggle" id="mainHeaderProfile" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+                    <div class="d-flex align-items-center">
+                        <div>
+                            <img src="{% static 'assets/images/faces/15.jpg' %}" alt="img" class="avatar avatar-sm">
+                        </div>
+                    </div>
+                </a>
+                <!-- End::header-link|dropdown-toggle -->
+                <ul class="main-header-dropdown dropdown-menu pt-0 overflow-hidden header-profile-dropdown dropdown-menu-end" aria-labelledby="mainHeaderProfile">
+                    <li>
+                        <div class="dropdown-item text-center border-bottom">
+                            <span>
+                                Hello {{ request.session.name }} !
+                            </span>
+                        </div>
+                    </li>
+                    <li><a class="dropdown-item d-flex align-items-center" href="{% url 'logout' %}"><i class="fe fe-lock p-1 rounded-circle bg-primary-transparent ut me-2 fs-16"></i>Log Out</a></li>
+                </ul>
+            </li>  
+            <!-- End::header-element -->
+
+        </ul>
+        <!-- End::header-content-right -->
+
+    </div>
+    <!-- End::main-header-container -->
+
+</header>
+<!-- /app-header -->
+            <!-- Start::app-sidebar -->
+<aside class="app-sidebar sticky" id="sidebar">
+
+    <!-- Start::main-sidebar-header -->
+    <div class="main-sidebar-header">
+        <a href="" class="header-logo">
+            <img src="{% static 'assets/images/brand-logos/desktop-logo.png' %}" alt="logo" class="desktop-logo">
+            <img src="{% static 'assets/images/brand-logos/toggle-dark.png' %}" alt="logo" class="toggle-dark">
+            <img src="{% static 'assets/images/brand-logos/desktop-dark.png' %}" alt="logo" class="desktop-dark">
+            <img src="{% static 'assets/images/brand-logos/toggle-logo.png' %}" alt="logo" class="toggle-logo">
+            <img src="{% static 'assets/images/brand-logos/toggle-white.png' %}" alt="logo" class="toggle-white">
+            <img src="{% static 'assets/images/brand-logos/desktop-white.png' %}" alt="logo" class="desktop-white">
+        </a>
+    </div>
+    <!-- End::main-sidebar-header -->
+
+    <!-- Start::main-sidebar -->
+    <div class="main-sidebar" id="sidebar-scroll">
+
+        <!-- Start::nav -->
+        <nav class="main-menu-container nav nav-pills flex-column sub-open">
+            <div class="slide-left" id="slide-left">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="#7b8191" width="24" height="24" viewBox="0 0 24 24"> <path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"></path> </svg>
+            </div>
+            <ul class="main-menu">
+
+                <!-- Start::slide -->
+                <li class="slide">
+                    <a href="/manage_user" class="side-menu__item">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 side-menu__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-users">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M9 7m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" />
+                            <path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                            <path d="M21 21v-2a4 4 0 0 0 -3 -3.85" />
+                          </svg>
+                        <span class="side-menu__label">Manage User</span>
+                    </a>
+                </li>
+                <!-- End::slide -->
+                 <!-- Start::slide -->
+                <li class="slide">
+                  <a href="/company" class="side-menu__item">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 side-menu__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-file-upload">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+                        <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
+                        <path d="M12 11v6" />
+                        <path d="M9.5 13.5l2.5 -2.5l2.5 2.5" />
+                      </svg>
+                      <span class="side-menu__label">Upload Data</span>
+                  </a>
+              </li>
+              <!-- End::slide -->
+               <!-- Start::slide -->
+               <li class="slide">
+                <a href="/query_builder" class="side-menu__item">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 side-menu__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-filter">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M4 4h16v2.172a2 2 0 0 1 -.586 1.414l-4.414 4.414v7l-6 2v-8.5l-4.48 -4.928a2 2 0 0 1 -.52 -1.345v-2.227z" />
+                      </svg>
+                    <span class="side-menu__label">Data Filteration</span>
+                </a>
+            </li>
+            <!-- End::slide -->
+
+            </ul>
+            <div class="slide-right" id="slide-right"><svg xmlns="http://www.w3.org/2000/svg" fill="#7b8191" width="24" height="24" viewBox="0 0 24 24"> <path d="M10.707 17.707 16.414 12l-5.707-5.707-1.414 1.414L13.586 12l-4.293 4.293z"></path> </svg></div>
+        </nav>
+        <!-- End::nav -->
+
+    </div>
+    <!-- End::main-sidebar -->
+
+</aside>
+<!-- End::app-sidebar -->
+
+
+
+        
+        
+
+<!-- Popper JS -->
+<script src="{% static 'assets/libs/@popperjs/core/umd/popper.min.js' %}"></script>
+
+<!-- Bootstrap JS -->
+<script src="{% static 'assets/libs/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+<!-- Defaultmenu JS -->
+<script src="{% static 'assets/js/defaultmenu.min.js' %}"></script>
+
+<!-- Node Waves JS-->
+<script src="{% static 'assets/libs/node-waves/waves.min.js' %}"></script>
+
+<!-- Sticky JS -->
+<script src="{% static 'assets/js/sticky.js' %}"></script>
+
+<!-- Simplebar JS -->
+<script src="{% static 'assets/libs/simplebar/simplebar.min.js' %}"></script>
+<script src="{% static 'assets/js/simplebar.js' %}"></script>
+
+<!-- Auto Complete JS -->
+<script src="{% static 'assets/libs/@tarekraafat/autocomplete.js/autoComplete.min.js' %}"></script>
+
+<!-- Color Picker JS -->
+<script src="{% static 'assets/libs/@simonwep/pickr/pickr.es5.min.js' %}"></script>
+
+<!-- Date & Time Picker JS -->
+<script src="{% static 'assets/libs/flatpickr/flatpickr.min.js' %}"></script>
+
+
+    
+<!-- Custom-Switcher JS -->
+<script src="{% static 'assets/js/custom-switcher.min.js' %}"></script>
+
+    <!-- Prism JS -->
+    <script src="{% static 'assets/libs/prismjs/prism.js' %}"></script>
+    <script src="{% static 'assets/js/prism-custom.js' %}"></script>
+
+    <!-- Custom JS -->
+    <script src="{% static 'assets/js/custom.js' %}"></script>
+
+    
+
+</body>
+
+</html>
